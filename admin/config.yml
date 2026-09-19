@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: "images/productos"
+public_folder: "/images/productos"
+
+locale: "es"
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo"
+    files:
+      - file: "data/productos.json"
+        label: "Productos"
+        name: "productos"
+        fields:
+          - label: "Productos"
+            name: "productos"
+            widget: "list"
+            label_singular: "Producto"
+            summary: "{{nombre}} — Gs. {{precio}}"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options:
+                  - "Cajas personalizadas"
+                  - "Tarjetería"
+                  - "Decoración"
+                  - "Accesorios"
+                  - "Regalos"
+              - { label: "Precio (Gs.)", name: "precio", widget: "number", value_type: "int", min: 0 }
+              - { label: "Descripción", name: "descripcion", widget: "text", required: false }
+              - { label: "Foto del producto", name: "imagen", widget: "image", required: false, choose_url: false }
+              - { label: "Agotado", name: "agotado", widget: "boolean", default: false, required: false }
