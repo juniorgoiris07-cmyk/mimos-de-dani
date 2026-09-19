@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mimos de Dani — Catálogo</title>
+<meta name="description" content="Artesanías y cajas personalizadas hechas a mano.">
+<link rel="icon" id="favicon-logo" href="">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+  :root{
+    --c1:#e8feff; --c2:#d8ffff; --c3:#c4fffc; --c4:#9bfeff; --c5:#52f5ff;
+    --bg:#ffffff; --surface:#ffffff; --line:#e7e7e7;
+    --ink:#1c1c1c; --ink-soft:#767676;
+    --accent:#0f8494;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:'Montserrat', system-ui, sans-serif; font-weight:400; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  .wrap{ max-width:1080px; margin:0 auto; padding-inline:24px; }
+  .script{ font-family:'Alex Brush', cursive; font-weight:400; line-height:1; }
+
+  .divider{ display:flex; align-items:center; justify-content:center; gap:12px; }
+  .divider .ln{ width:44px; height:1px; background:var(--line); }
+  .heart{ width:10px; height:10px; flex:none; }
+  .heart path{ fill:var(--accent); }
+
+  header{ background:var(--bg); border-bottom:1px solid var(--line); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding-block:14px; }
+  .nav .logo-mark{ height:38px; width:auto; }
+  nav.links{ display:none; gap:28px; }
+  @media (min-width:760px){ nav.links{ display:flex; } }
+  nav.links a{ text-decoration:none; color:var(--ink-soft); font-weight:500; font-size:.82rem; }
+  nav.links a:hover{ color:var(--ink); }
+  .wsp-link{ font-size:.8rem; font-weight:600; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:1px; }
+
+  section{ padding-block:60px; }
+
+  .hero{ text-align:center; padding-block:72px 56px; border-bottom:1px solid var(--line); }
+  .hero .logo-big{ width:170px; margin:0 auto 20px; }
+  .hero p.tag{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 18px; }
+  .hero p.lead{ font-size:1rem; color:var(--ink-soft); max-width:40ch; margin:0 auto 28px; line-height:1.7; }
+  .hero-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:var(--bg); border:1px solid var(--ink); padding:.75em 1.7em; font-weight:600; font-size:.8rem; text-decoration:none; }
+  .btn.outline{ background:transparent; color:var(--ink); }
+
+  .historia{ border-bottom:1px solid var(--line); }
+  .historia-grid{ display:grid; grid-template-columns:.8fr 1.2fr; gap:52px; align-items:center; }
+  @media (max-width:760px){ .historia-grid{ grid-template-columns:1fr; } }
+  .historia-frame{ aspect-ratio:4/5; border:1px solid var(--line); display:grid; place-items:center; text-align:center; gap:10px; padding:24px; color:var(--ink-soft); }
+  .historia-frame .heart{ width:18px; height:18px; }
+  .historia-frame span{ font-size:.78rem; }
+  .historia .tag{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 .6em; }
+  .historia h2{ font-weight:600; font-size:1.6rem; margin:0 0 .6em; }
+  .historia p{ color:var(--ink-soft); line-height:1.8; }
+  .historia strong{ color:var(--ink); }
+
+  .section-head{ text-align:center; max-width:50ch; margin:0 auto 40px; }
+  .section-head .tag{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 .6em; }
+  .section-head h2{ font-weight:600; font-size:1.7rem; margin:0 0 .4em; }
+  .section-head p{ color:var(--ink-soft); font-size:.92rem; }
+
+  .cat-tabs{ display:flex; gap:24px; justify-content:center; flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom:30px; padding-bottom:16px; }
+  .cat-tab{ background:none; border:none; padding:0; font-family:inherit; font-weight:500; font-size:.84rem; color:var(--ink-soft); cursor:pointer; }
+  .cat-tab[aria-pressed="true"]{ color:var(--ink); text-decoration:underline; text-underline-offset:5px; }
+
+  .toolbar{ display:flex; gap:14px; align-items:center; justify-content:center; flex-wrap:wrap; margin-bottom:36px; }
+  .toolbar input[type="search"]{ border:1px solid var(--line); background:var(--bg); color:var(--ink); padding:.55em 1em; font-family:inherit; font-size:.84rem; }
+  .price-range{ display:flex; align-items:center; gap:8px; font-size:.8rem; color:var(--ink-soft); }
+  .price-range input[type="number"]{ width:82px; border:1px solid var(--line); background:var(--bg); color:var(--ink); padding:.5em .7em; font-family:inherit; text-align:center; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:36px 24px; }
+  .card{ display:flex; flex-direction:column; }
+  .card-img{ position:relative; aspect-ratio:1/1; border:1px solid var(--line); display:grid; place-items:center; color:var(--line); margin-bottom:14px; overflow:hidden; }
+  .card-img img{ width:100%; height:100%; object-fit:cover; }
+  .card-img svg{ width:24%; }
+  .card-cat{ font-size:.66rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
+  .card-name{ font-weight:500; font-size:.96rem; margin:.35em 0 .2em; }
+  .card-desc{ font-size:.8rem; color:var(--ink-soft); line-height:1.5; margin:0 0 .7em; }
+  .card-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:10px; border-top:1px solid var(--line); }
+  .price{ font-weight:600; color:var(--ink); font-variant-numeric:tabular-nums; font-size:.9rem; }
+  .mini-btn{ font-size:.78rem; font-weight:600; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--ink); padding-bottom:1px; }
+  .mini-btn:hover{ color:var(--accent); border-color:var(--accent); }
+  .empty{ text-align:center; color:var(--ink-soft); padding:50px 0; display:none; }
+  .empty[data-show="true"]{ display:block; }
+  .load-msg{ text-align:center; color:var(--ink-soft); padding:40px 0; font-size:.85rem; }
+
+  .card.agotado .card-img{ opacity:.4; }
+  .card.agotado .card-name, .card.agotado .price{ color:var(--ink-soft); }
+  .badge-agotado{ position:absolute; top:8px; left:8px; z-index:1; background:var(--ink); color:var(--bg); font-size:.62rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:.35em .6em; }
+
+  footer{ padding-block:52px 26px; }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr .8fr .9fr .8fr; gap:36px; margin-bottom:40px; }
+  @media (max-width:760px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .footer-grid{ grid-template-columns:1fr; } }
+  .footer-brand .logo-mark{ height:36px; margin-bottom:14px; }
+  .footer-brand p{ color:var(--ink-soft); font-size:.82rem; max-width:28ch; }
+  .footer-col h4{ font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; margin:0 0 1em; color:var(--ink-soft); font-weight:600; }
+  .footer-col ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.7em; font-size:.86rem; color:var(--ink-soft); }
+  .footer-col a{ text-decoration:none; }
+  .footer-col a:hover{ color:var(--accent); }
+  .social{ display:flex; gap:16px; margin-top:6px; }
+  .social a{ color:var(--ink); }
+  .social a:hover{ color:var(--accent); }
+  .footer-note{ padding-top:20px; border-top:1px solid var(--line); font-size:.72rem; color:var(--ink-soft); text-align:center; letter-spacing:.05em; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <img class="logo-mark" id="logo-header" src="" alt="Mimos de Dani">
+    <nav class="links">
+      <a href="#historia">Historia</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="wsp-link" id="wsp-header" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="logo-big" id="logo-hero" src="" alt="Mimos de Dani">
+    <p class="tag">Tienda online · Hecho a mano</p>
+    <div class="divider" style="margin-bottom:20px">
+      <span class="ln"></span>
+      <svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10.3-9.2C-0.1 8.5 1.4 4.5 5.2 4.1c2.2-.2 3.9 1 4.8 2.6.9-1.6 2.6-2.8 4.8-2.6 3.8.4 5.3 4.4 3.5 7.7C19.5 16.4 12 21 12 21Z"/></svg>
+      <span class="ln"></span>
+    </div>
+    <p class="lead">Artesanías y cajas personalizadas hechas a mano, con cariño en cada detalle. Más de 75 productos para regalar en cualquier ocasión.</p>
+    <div class="hero-actions">
+      <a href="#catalogo" class="btn">Ver catálogo</a>
+      <a href="#historia" class="btn outline">Conocer la historia</a>
+    </div>
+  </div>
+</section>
+
+<section class="historia" id="historia">
+  <div class="wrap historia-grid">
+    <div class="historia-frame">
+      <svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10.3-9.2C-0.1 8.5 1.4 4.5 5.2 4.1c2.2-.2 3.9 1 4.8 2.6.9-1.6 2.6-2.8 4.8-2.6 3.8.4 5.3 4.4 3.5 7.7C19.5 16.4 12 21 12 21Z"/></svg>
+      <span>Foto de Dani o del taller<br>(reemplazar por foto real)</span>
+    </div>
+    <div>
+      <p class="tag">Nuestra historia</p>
+      <h2>De las manos de <span class="script" style="font-size:1.5em">Dani</span> a tu casa</h2>
+      <p><strong>Mimos de Dani</strong> nació de las ganas de convertir pequeños detalles en grandes sorpresas. Cada pieza se arma a mano, cuidando cada terminación para que llegue con el mismo cariño con el que fue hecha.</p>
+      <p>Hoy el catálogo reúne más de 75 productos entre artesanías, cajas personalizadas y regalos para toda ocasión.</p>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Catálogo</p>
+      <h2>Elegí, filtrá y consultá</h2>
+      <p>Filtrá por categoría, buscá por nombre o por precio. Cada producto se consulta directo por WhatsApp.</p>
+    </div>
+
+    <div class="cat-tabs" id="chips"></div>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Buscar producto…">
+      <div class="price-range">
+        <span>Gs.</span>
+        <input type="number" id="min" placeholder="Mín" min="0">
+        <span>–</span>
+        <input type="number" id="max" placeholder="Máx" min="0">
+      </div>
+    </div>
+
+    <p class="load-msg" id="loadMsg">Cargando catálogo…</p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty">No hay productos que coincidan con ese filtro.</p>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo-mark" id="logo-footer" src="" alt="Mimos de Dani">
+        <p>Artesanías y regalos personalizados hechos a mano.</p>
+        <div class="social">
+          <a href="#" id="wsp-footer" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.5-1.3a.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.7s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2.1 4.8 4.8 0 0 0 1 2.5 10.9 10.9 0 0 0 4.4 3.9c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2 2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg></a>
+          <a href="#" id="ig-footer" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="#" id="fb-footer" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.9.3-1.5 1.6-1.5H16.5V4.2C16.1 4.1 15 4 13.8 4c-2.5 0-4.3 1.5-4.3 4.3v2.2H7v3h2.5V21Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul><li><a href="#historia">Historia</a></li><li><a href="#catalogo">Catálogo</a></li><li><a href="#contacto">Contacto</a></li><li><a href="admin/">Panel de administración</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categorías</h4>
+        <ul id="footer-cats"></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul><li><span id="wsp-text">WhatsApp: a confirmar</span></li><li><span id="zona-text">Caaguazú, Paraguay (a confirmar)</span></li></ul>
+      </div>
+    </div>
+    <p class="footer-note">MIMOS DE DANI · DANIELA HEDEL · HECHO A MANO CON AMOR</p>
+  </div>
+</footer>
+
+<script>
+  // Logo embebido en base64 (evita depender de un archivo binario aparte en el repo).
+  const LOGO_DATA_URI = "data:image/png;base64,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";
+  document.getElementById('favicon-logo').href = LOGO_DATA_URI;
+  ['logo-header','logo-hero','logo-footer'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.src = LOGO_DATA_URI;
+  });
+
+  // ─────────────────────────────────────────────────────────────
+  // CONFIGURACIÓN — reemplazar por los datos reales
+  // ─────────────────────────────────────────────────────────────
+  const CONFIG = {
+    whatsapp: 'https://wa.me/595000000000', // ⚠️ confirmar número exacto y reemplazar
+    whatsappLabel: 'a confirmar',
+    instagram: '#',
+    facebook: '#',
+  };
+  document.getElementById('wsp-header').href = CONFIG.whatsapp;
+  document.getElementById('wsp-footer').href = CONFIG.whatsapp;
+  document.getElementById('wsp-text').textContent = 'WhatsApp: ' + CONFIG.whatsappLabel;
+  document.getElementById('ig-footer').href = CONFIG.instagram;
+  document.getElementById('fb-footer').href = CONFIG.facebook;
+
+  // El catálogo YA NO está escrito acá adentro: se lee de data/productos.json,
+  // que es justo el archivo que edita el panel de administración (/admin).
+  let PRODUCTOS = [];
+
+  const gs = n => new Intl.NumberFormat('es-PY').format(n);
+  const grid = document.getElementById('grid');
+  const chipsEl = document.getElementById('chips');
+  const footerCats = document.getElementById('footer-cats');
+  const searchEl = document.getElementById('search');
+  const minEl = document.getElementById('min');
+  const maxEl = document.getElementById('max');
+  const emptyEl = document.getElementById('empty');
+  const loadMsg = document.getElementById('loadMsg');
+
+  let categorias = ['Todas'];
+  let categoriaActiva = 'Todas';
+
+  const placeholderIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.3" fill="currentColor" stroke="none"/><path d="M21 16l-5.5-5.5L7 19"/></svg>`;
+
+  function renderChips(){
+    chipsEl.innerHTML = categorias.map(c =>
+      `<button class="cat-tab" data-cat="${c}" aria-pressed="${c===categoriaActiva}">${c}</button>`
+    ).join('');
+    chipsEl.querySelectorAll('.cat-tab').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        categoriaActiva = btn.dataset.cat;
+        renderChips();
+        renderGrid();
+      });
+    });
+    footerCats.innerHTML = categorias.filter(c=>c!=='Todas').map(c=>`<li><a href="#catalogo" data-cat="${c}">${c}</a></li>`).join('');
+    footerCats.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', ()=>{ categoriaActiva = a.dataset.cat; renderChips(); renderGrid(); });
+    });
+  }
+
+  function renderGrid(){
+    const q = searchEl.value.trim().toLowerCase();
+    const min = minEl.value ? Number(minEl.value) : null;
+    const max = maxEl.value ? Number(maxEl.value) : null;
+
+    const filtrados = PRODUCTOS.filter(p=>{
+      if(categoriaActiva !== 'Todas' && p.categoria !== categoriaActiva) return false;
+      if(q && !p.nombre.toLowerCase().includes(q)) return false;
+      if(min !== null && p.precio < min) return false;
+      if(max !== null && p.precio > max) return false;
+      return true;
+    });
+
+    grid.innerHTML = filtrados.map(p => `
+      <article class="card ${p.agotado ? 'agotado' : ''}">
+        <div class="card-img">
+          ${p.agotado ? '<span class="badge-agotado">Agotado</span>' : ''}
+          ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}" loading="lazy">` : placeholderIcon}
+        </div>
+        <span class="card-cat">${p.categoria}</span>
+        <h3 class="card-name">${p.nombre}</h3>
+        <p class="card-desc">${p.descripcion || ''}</p>
+        <div class="card-foot">
+          <span class="price">Gs. ${gs(p.precio)}</span>
+          <a class="mini-btn" target="_blank" rel="noopener" href="${CONFIG.whatsapp}?text=${encodeURIComponent((p.agotado ? 'Hola! Quería consultar cuándo vuelve a estar disponible: ' : 'Hola! Te consulto por: ') + p.nombre)}">${p.agotado ? 'Consultar disponibilidad' : 'Consultar'}</a>
+        </div>
+      </article>
+    `).join('');
+
+    emptyEl.dataset.show = filtrados.length === 0 ? 'true' : 'false';
+  }
+
+  searchEl.addEventListener('input', renderGrid);
+  minEl.addEventListener('input', renderGrid);
+  maxEl.addEventListener('input', renderGrid);
+
+  // Copia de reserva de data/productos.json, SOLO para poder previsualizar
+  // el sitio con doble clic (sin servidor) antes de publicarlo. Una vez
+  // publicado (Netlify/GitHub Pages), el sitio siempre usa data/productos.json
+  // de verdad — este bloque se ignora salvo que el fetch falle.
+  const PRODUCTOS_RESERVA = {
+    "productos": [
+      { "nombre": "Caja sorpresa cumpleaños", "categoria": "Cajas personalizadas", "precio": 85000, "descripcion": "Caja con nombre, dulces y detalles a elección.", "imagen": "", "agotado": true },
+      { "nombre": "Caja desayuno sorpresa", "categoria": "Cajas personalizadas", "precio": 120000, "descripcion": "Desayuno completo armado y decorado a mano.", "imagen": "", "agotado": false },
+      { "nombre": "Caja San Valentín", "categoria": "Cajas personalizadas", "precio": 95000, "descripcion": "Edición especial con detalles románticos.", "imagen": "", "agotado": false },
+      { "nombre": "Tarjetero de tela bordado", "categoria": "Tarjetería", "precio": 45000, "descripcion": "Bordado a mano, distintos colores disponibles.", "imagen": "", "agotado": false },
+      { "nombre": "Invitación artesanal", "categoria": "Tarjetería", "precio": 15000, "descripcion": "Por unidad, personalizada con el motivo del evento.", "imagen": "", "agotado": false },
+      { "nombre": "Álbum de fotos scrapbook", "categoria": "Tarjetería", "precio": 130000, "descripcion": "Álbum decorado a mano para guardar recuerdos.", "imagen": "", "agotado": false },
+      { "nombre": "Cuadro decorativo con nombre", "categoria": "Decoración", "precio": 60000, "descripcion": "Cuadro en madera pintado a mano.", "imagen": "", "agotado": false },
+      { "nombre": "Guirnalda de flores secas", "categoria": "Decoración", "precio": 40000, "descripcion": "Ideal para decorar cumpleaños y eventos.", "imagen": "", "agotado": false },
+      { "nombre": "Portavelas pintado a mano", "categoria": "Decoración", "precio": 35000, "descripcion": "Set de 2 unidades, distintos diseños.", "imagen": "", "agotado": false },
+      { "nombre": "Llavero personalizado", "categoria": "Accesorios", "precio": 18000, "descripcion": "Con nombre o inicial a elección.", "imagen": "", "agotado": false },
+      { "nombre": "Llavero de flores tejidas", "categoria": "Accesorios", "precio": 22000, "descripcion": "Tejido a crochet, varios colores.", "imagen": "", "agotado": false },
+      { "nombre": "Pulsera artesanal", "categoria": "Accesorios", "precio": 25000, "descripcion": "Hecha a mano con detalles personalizados.", "imagen": "", "agotado": false },
+      { "nombre": "Set de mates decorados", "categoria": "Regalos", "precio": 150000, "descripcion": "Mate y bombilla decorados a juego.", "imagen": "", "agotado": false },
+      { "nombre": "Termo forrado personalizado", "categoria": "Regalos", "precio": 110000, "descripcion": "Forro de tela con nombre bordado.", "imagen": "", "agotado": false },
+      { "nombre": "Kit de bienvenida bebé", "categoria": "Regalos", "precio": 140000, "descripcion": "Set completo para recién nacidos.", "imagen": "", "agotado": false },
+      { "nombre": "Frasco de mensajes", "categoria": "Regalos", "precio": 30000, "descripcion": "Frasco con mensajes escritos a mano.", "imagen": "", "agotado": false }
+    ]
+  };
+
+  function pintarProductos(data){
+    PRODUCTOS = data.productos || [];
+    categorias = ['Todas', ...new Set(PRODUCTOS.map(p => p.categoria))];
+    loadMsg.style.display = 'none';
+    renderChips();
+    renderGrid();
+  }
+
+  fetch('data/productos.json', { cache: 'no-store' })
+    .then(r => { if(!r.ok) throw new Error('no se pudo leer el catálogo'); return r.json(); })
+    .then(pintarProductos)
+    .catch(() => {
+      // Estamos abiertos como archivo local (doble clic): el navegador
+      // bloquea leer data/productos.json así, entonces usamos la copia
+      // de reserva para que la vista previa funcione igual.
+      pintarProductos(PRODUCTOS_RESERVA);
+    });
+</script>
+</body>
+</html>
