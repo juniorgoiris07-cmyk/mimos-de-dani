@@ -1,0 +1,20 @@
+{
+  "productos": [
+    { "nombre": "Caja sorpresa cumpleaños", "categoria": "Cajas personalizadas", "precio": 85000, "descripcion": "Caja con nombre, dulces y detalles a elección.", "imagen": "", "agotado": true },
+    { "nombre": "Caja desayuno sorpresa", "categoria": "Cajas personalizadas", "precio": 120000, "descripcion": "Desayuno completo armado y decorado a mano.", "imagen": "", "agotado": false },
+    { "nombre": "Caja San Valentín", "categoria": "Cajas personalizadas", "precio": 95000, "descripcion": "Edición especial con detalles románticos.", "imagen": "", "agotado": false },
+    { "nombre": "Tarjetero de tela bordado", "categoria": "Tarjetería", "precio": 45000, "descripcion": "Bordado a mano, distintos colores disponibles.", "imagen": "", "agotado": false },
+    { "nombre": "Invitación artesanal", "categoria": "Tarjetería", "precio": 15000, "descripcion": "Por unidad, personalizada con el motivo del evento.", "imagen": "", "agotado": false },
+    { "nombre": "Álbum de fotos scrapbook", "categoria": "Tarjetería", "precio": 130000, "descripcion": "Álbum decorado a mano para guardar recuerdos.", "imagen": "", "agotado": false },
+    { "nombre": "Cuadro decorativo con nombre", "categoria": "Decoración", "precio": 60000, "descripcion": "Cuadro en madera pintado a mano.", "imagen": "", "agotado": false },
+    { "nombre": "Guirnalda de flores secas", "categoria": "Decoración", "precio": 40000, "descripcion": "Ideal para decorar cumpleaños y eventos.", "imagen": "", "agotado": false },
+    { "nombre": "Portavelas pintado a mano", "categoria": "Decoración", "precio": 35000, "descripcion": "Set de 2 unidades, distintos diseños.", "imagen": "", "agotado": false },
+    { "nombre": "Llavero personalizado", "categoria": "Accesorios", "precio": 18000, "descripcion": "Con nombre o inicial a elección.", "imagen": "", "agotado": false },
+    { "nombre": "Llavero de flores tejidas", "categoria": "Accesorios", "precio": 22000, "descripcion": "Tejido a crochet, varios colores.", "imagen": "", "agotado": false },
+    { "nombre": "Pulsera artesanal", "categoria": "Accesorios", "precio": 25000, "descripcion": "Hecha a mano con detalles personalizados.", "imagen": "", "agotado": false },
+    { "nombre": "Set de mates decorados", "categoria": "Regalos", "precio": 150000, "descripcion": "Mate y bombilla decorados a juego.", "imagen": "", "agotado": false },
+    { "nombre": "Termo forrado personalizado", "categoria": "Regalos", "precio": 110000, "descripcion": "Forro de tela con nombre bordado.", "imagen": "", "agotado": false },
+    { "nombre": "Kit de bienvenida bebé", "categoria": "Regalos", "precio": 140000, "descripcion": "Set completo para recién nacidos.", "imagen": "", "agotado": false },
+    { "nombre": "Frasco de mensajes", "categoria": "Regalos", "precio": 30000, "descripcion": "Frasco con mensajes escritos a mano.", "imagen": "", "agotado": false }
+  ]
+}
