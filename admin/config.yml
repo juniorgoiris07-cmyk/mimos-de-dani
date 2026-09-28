@@ -32,7 +32,8 @@ collections:
                   - "Decoración"
                   - "Accesorios"
                   - "Regalos"
-              - { label: "Precio (Gs.)", name: "precio", widget: "number", value_type: "int", min: 0 }
+              - { label: "Precio (Gs.)", name: "precio", widget: "number", value_type: "int", min: 0, hint: "Si es personalizable, poné el precio base — en la página se muestra como \"Desde Gs. X\"." }
               - { label: "Descripción", name: "descripcion", widget: "text", required: false }
+              - { label: "Es personalizable", name: "personalizable", widget: "boolean", default: false, required: false, hint: "Activalo si el precio o el diseño cambian según lo que pida el cliente." }
               - { label: "Foto del producto", name: "imagen", widget: "image", required: false, choose_url: false }
               - { label: "Agotado", name: "agotado", widget: "boolean", default: false, required: false }
